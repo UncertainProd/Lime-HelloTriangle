@@ -59,7 +59,8 @@ class Main extends Application
 			return shader;
 		}
 
-		trace('SHADER COMPILE ERROR: ${gl.getShaderInfoLog(shader)}');
+		var shaderTypeString = (type == gl.FRAGMENT_SHADER) ? "Fragment" : "Vertex";
+		trace('$shaderTypeString SHADER COMPILE ERROR: ${gl.getShaderInfoLog(shader)}');
 		gl.deleteShader(shader);
 		return null;
 	}
